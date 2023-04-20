@@ -1,0 +1,228 @@
+ // @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+	width: 100%;
+	height: 100%;
+	background-color: #e9edef;
+}
+.container {
+	width: 100%;
+    height: 33%;
+    margin: 0px auto;
+	padding: 25px 5px;
+    box-sizing: border-box;
+}
+
+.package.package1 {
+	margin-left: 25px;
+}
+.package.package3 {
+	margin-right: 25px;
+}
+.package {
+   	    height: 175px;
+    width: calc(83% / 3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    float: left;
+    margin: 0px calc(6% / 3) 0px 0px;
+		transform: scale(1);
+	
+	&:hover {
+		transform: scale(1.07);
+	}
+		
+		&:hover .package-title {
+			background: #27A6D2
+		}
+		&:hover .package-price, &:hover .package-expiry {
+			color: #27A6D2
+		}
+		
+		.package-title {
+			  height: 20%;
+				background: #7cd0ed;
+				width: 100%;
+				font-weight: bold;
+				color: white;
+				text-transform: capitalize;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 14px;
+				transition: all 0.3s ease-in-out;
+			border-radius: 3px 3px 0px 0px;
+		}
+		.package-details {
+			width: 100%;
+			height: 75%;
+			background: white;
+			border-radius: 0px 0px 3px 3px;
+			box-shadow: 2px 2px 3px 0px #00000014;
+			
+			.package-price {
+				width: 100%;
+				height: 40%;
+				font-size: 25px;
+				font-weight: bold;
+				display: flex;
+				align-items: flex-end;
+				justify-content: center;
+				transition: all 0.3s ease-in-out;
+			}
+			.package-expiry {
+				width: 100%;
+				height: 10%;
+				font-size: 12px;
+				display: flex;
+				align-items: flex-end;
+				justify-content: center;
+				transition: all 0.3s ease-in-out;
+			}
+			.package-dashes {
+				width: 100%;
+				height: 50%;
+				padding: 15px 10px;
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				
+				span:nth-child(odd) {
+					width: 80%;
+					margin: 0px auto;
+					height: 2px;
+					background: #e4e4e4;
+					display: block;
+				}
+				span:nth-child(even) {
+					width: 65%;
+					margin: 0px auto;
+					height: 2px;
+					background: #e4e4e4;
+					display: block;
+				}
+			}
+		}
+		
+	}
+
+.packages-stat {
+	            margin: 20px 12px 15px;
+    background: white;
+    box-shadow: 2px 2px 3px 0px #00000014;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 125px;
+	
+	.stat {
+		height: calc(85% / 3);
+    display: grid;
+    grid-template-rows: 50% 50%;
+		
+		.stat-one {
+			display: flex;
+			flex-direction: row;
+			font-size: 12px;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.stat-range {
+			  height: 8px;
+				width: 100%;
+				background: #e9edef;
+				border-radius: 10px;
+				margin: 3px 0px;
+			position: relative;
+			overflow: hidden;
+			
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				background: #7cd0ed;
+				width: 0%;
+				transition: all .3s linear;
+			}
+		}
+	}
+}
+
+.package1:hover {
+	~ .packages-stat .stat1 .stat-two .stat-range::after {
+		width: 5%;
+	}
+	~ .packages-stat .stat2 .stat-two .stat-range::after {
+		width: 5%;
+	}
+	~ .packages-stat .stat3 .stat-two .stat-range::after {
+		width: 5%;
+	}
+}
+.package2:hover {
+	~ .packages-stat .stat1 .stat-two .stat-range::after {
+		width: 25%;
+	}
+	~ .packages-stat .stat2 .stat-two .stat-range::after {
+		width: 75%;
+	}
+	~ .packages-stat .stat3 .stat-two .stat-range::after {
+		width: 50%;
+	}
+}
+.package3:hover {
+	~ .packages-stat .stat1 .stat-two .stat-range::after {
+		width: 100%;
+	}
+	~ .packages-stat .stat2 .stat-two .stat-range::after {
+		width: 100%;
+	}
+	~ .packages-stat .stat3 .stat-two .stat-range::after {
+		width: 100%;
+	}
+}
+
+
+html {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .iffpane{
+	  margin :auto;
+	  width: 50%;
+	  border : 3px,solid,black;
+	  padding : 20px;
+  }
